@@ -1,0 +1,4 @@
+basic-pitch
+pretty_midi
+numpy
+matplotlib

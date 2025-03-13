@@ -1,0 +1,153 @@
+{
+    "youtubeVideoId": "FLOMrQtnDHE",
+    "mixTitle": "Jungle/DNB Elements Visualization",
+    "mixDescription": "Analysis of jungle and drum & bass elements in a 30-minute mix",
+    "songs": [
+      {
+        "title": "Atalea* - A n g e l s y n t h",
+        "start": 0,
+        "end": 252
+      },
+      {
+        "title": "Blksmiith - fragment",
+        "start": 252,
+        "end": 349
+      },
+      {
+        "title": "Enkei, Dxrkwrld - indefinite",
+        "start": 349,
+        "end": 450
+      },
+      {
+        "title": "Atalea* - shards of titania",
+        "start": 450,
+        "end": 710
+      },
+      {
+        "title": "Atalea* - online girlfriend",
+        "start": 710,
+        "end": 853
+      },
+      {
+        "title": "Kanpeki - pile of glass",
+        "start": 853,
+        "end": 1135
+      },
+      {
+        "title": "eightiesheadachetape - what we did in the desert",
+        "start": 1135,
+        "end": 1554
+      },
+      {
+        "title": "Atalea* - enter the netsphere",
+        "start": 1554,
+        "end": 1845
+      },
+      {
+        "title": "Blksmiith - sr20det",
+        "start": 1845,
+        "end": 2318
+      },
+      {
+        "title": "ooxygen - care (feat. pukey)",
+        "start": 2318,
+        "end": 2902
+      },
+      {
+        "title": "nohidea - keep dreaming!",
+        "start": 2902,
+        "end": 2957
+      },
+      {
+        "title": "enkei, wiv - difficult to see",
+        "start": 2957,
+        "end": 3224
+      }
+    ],
+    "patterns": [
+      {
+        "name": "Amen Break",
+        "type": "jungle",
+        "fingerprint": {},
+        "timestamps": [
+          {"start": 28, "end": 47, "song": "Atalea* - A n g e l s y n t h"},
+          {"start": 50, "end": 72, "song": "Atalea* - A n g e l s y n t h"},
+          {"start": 110, "end": 130, "song": "Atalea* - A n g e l s y n t h"},
+          {"start": 296, "end": 320, "song": "Atalea* - shards of titania"},
+          {"start": 365, "end": 377, "song": "Atalea* - shards of titania"},
+          {"start": 448, "end": 490, "song": "Atalea* - online girlfriend"},
+          {"start": 760, "end": 803, "song": "eightiesheadachetape - what we did in the desert"},
+          {"start": 1025, "end": 1045, "song": "Atalea* - enter the netsphere"},
+          {"start": 1280, "end": 1320, "song": "Blksmiith - sr20det"},
+          {"start": 1405, "end": 1485, "song": "ooxygen - care (feat. pukey)"},
+          {"start": 1515, "end": 1600, "song": "ooxygen - care (feat. pukey)"},
+          {"start": 1635, "end": 1714, "song": "ooxygen - care (feat. pukey)"},
+          {"start": 1817, "end": 1863, "song": "enkei, wiv - difficult to see"}
+        ]
+      },
+      {
+        "name": "Foghorn/Car Bass",
+        "type": "dnb",
+        "fingerprint": {},
+        "timestamps": [
+          {"start": 48, "end": 50, "song": "Atalea* - A n g e l s y n t h"},
+          {"start": 80, "end": 90, "song": "Atalea* - A n g e l s y n t h"},
+          {"start": 490, "end": 500, "song": "Atalea* - online girlfriend"},
+          {"start": 846, "end": 912, "song": "eightiesheadachetape - what we did in the desert"},
+          {"start": 1145, "end": 1200, "song": "Blksmiith - sr20det"}
+        ]
+      },
+      {
+        "name": "175 BPM Break",
+        "type": "dnb",
+        "fingerprint": {},
+        "timestamps": [
+          {"start": 158, "end": 170, "song": "Atalea* - A n g e l s y n t h"},
+          {"start": 182, "end": 206, "song": "Blksmiith - fragment"},
+          {"start": 320, "end": 330, "song": "Atalea* - shards of titania"},
+          {"start": 590, "end": 630, "song": "Kanpeki - pile of glass"},
+          {"start": 1749, "end": 1795, "song": "nohidea - keep dreaming!"}
+        ]
+      },
+      {
+        "name": "Reese Bass",
+        "type": "jungle",
+        "fingerprint": {},
+        "timestamps": [
+          {"start": 207, "end": 218, "song": "Blksmiith - fragment"},
+          {"start": 570, "end": 590, "song": "Kanpeki - pile of glass"},
+          {"start": 963, "end": 1021, "song": "Atalea* - enter the netsphere"},
+          {"start": 1055, "end": 1100, "song": "Atalea* - enter the netsphere"}
+        ]
+      },
+      {
+        "name": "Ambient Sounds/Sampled Music",
+        "type": "both",
+        "fingerprint": {},
+        "timestamps": [
+          {"start": 230, "end": 240, "song": "Enkei, Dxrkwrld - indefinite"},
+          {"start": 330, "end": 365, "song": "Atalea* - shards of titania"},
+          {"start": 538, "end": 570, "song": "Kanpeki - pile of glass"},
+          {"start": 803, "end": 840, "song": "eightiesheadachetape - what we did in the desert"},
+          {"start": 1510, "end": 1515, "song": "ooxygen - care (feat. pukey)"}
+        ]
+      },
+      {
+        "name": "Think Break",
+        "type": "jungle",
+        "fingerprint": {},
+        "timestamps": [
+          {"start": 260, "end": 290, "song": "Enkei, Dxrkwrld - indefinite"}
+        ]
+      },
+      {
+        "name": "Reggae Bass",
+        "type": "jungle",
+        "fingerprint": {},
+        "timestamps": [
+          {"start": 1485, "end": 1509, "song": "ooxygen - care (feat. pukey)"},
+          {"start": 1600, "end": 1620, "song": "ooxygen - care (feat. pukey)"}
+        ]
+      }
+    ]
+  }

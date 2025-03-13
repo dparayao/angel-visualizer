@@ -1,0 +1,114 @@
+{
+    "amen_break": {
+      "fingerprint": {
+        "bpm": 165,
+        "complexity": 8.5,
+        "density": 7.2,
+        "energy": 9.0,
+        "key": "C minor",
+        "sample_source": "The Winstons - Amen Brother (1969)"
+      },
+      "details": {
+        "description": "The most sampled drum break in history, from the B-side of a soul record.",
+        "cultural_significance": "Cornerstone of jungle music, used in thousands of tracks.",
+        "typical_usage": "Break chopping, build-ups, high-energy sections",
+        "historical_note": "Originally performed by Gregory C. Coleman, who died homeless without royalties."
+      }
+    },
+    "foghorn_car_bass": {
+      "fingerprint": {
+        "bpm": 175,
+        "complexity": 6.0,
+        "density": 9.2,
+        "energy": 9.5,
+        "key": "F minor",
+        "frequency_range": "30-100 Hz"
+      },
+      "details": {
+        "description": "Deep, rumbling bass designed to be felt in car audio systems.",
+        "cultural_significance": "Emerged in modern DNB around 2010, defining the 'foghorn' sound.",
+        "typical_usage": "Drop sections, heavy club moments",
+        "production_technique": "Created using layered sine waves with distortion and pitch modulation."
+      }
+    },
+    "175_bpm_break": {
+      "fingerprint": {
+        "bpm": 175,
+        "complexity": 7.5,
+        "density": 8.0,
+        "energy": 8.5,
+        "key": "Various",
+        "time_signature": "4/4"
+      },
+      "details": {
+        "description": "Fast breakbeat patterns typical of modern drum and bass.",
+        "cultural_significance": "Defines the modern DNB tempo, faster than original jungle.",
+        "typical_usage": "Main rhythm element in DNB tracks",
+        "historical_note": "DNB evolved from jungle in the mid-1990s with faster tempos and cleaner production."
+      }
+    },
+    "reese_bass": {
+      "fingerprint": {
+        "bpm": "Variable",
+        "complexity": 7.0,
+        "density": 9.0,
+        "energy": 8.8,
+        "key": "D minor",
+        "frequency_range": "80-400 Hz"
+      },
+      "details": {
+        "description": "A growling, distorted bass sound with rich harmonics.",
+        "cultural_significance": "Named after Kevin Saunderson's 'Just Want Another Chance' (1988).",
+        "typical_usage": "Mid-range bass element, often paired with sub bass",
+        "production_technique": "Multiple detuned sawtooth waves with filter modulation."
+      }
+    },
+    "ambient_sounds_sampled_music": {
+      "fingerprint": {
+        "bpm": "Variable",
+        "complexity": 6.5,
+        "density": 5.0,
+        "energy": 4.0,
+        "key": "Various",
+        "sample_source": "Film, TV, reggae, jazz"
+      },
+      "details": {
+        "description": "Atmospheric elements that provide texture and context.",
+        "cultural_significance": "Creates the 'vibe' of jungle/DNB, often sampling Jamaican dub or film dialogue.",
+        "typical_usage": "Intros, breakdowns, transitions",
+        "historical_note": "Sampling culture is central to jungle's development, drawing from reggae soundsystem culture."
+      }
+    },
+    "think_break": {
+      "fingerprint": {
+        "bpm": 160,
+        "complexity": 7.0,
+        "density": 6.5,
+        "energy": 7.5,
+        "key": "N/A",
+        "sample_source": "Lyn Collins - Think (About It) (1972)"
+      },
+      "details": {
+        "description": "Funky drum break produced by James Brown.",
+        "cultural_significance": "Second most sampled break after the Amen Break.",
+        "typical_usage": "Often used for variation in jungle tracks",
+        "historical_note": "Popularized in hip-hop by Rob Base & DJ E-Z Rock's 'It Takes Two'."
+      }
+    },
+    "reggae_bass": {
+      "fingerprint": {
+        "bpm": 90,
+        "complexity": 6.0,
+        "density": 8.5,
+        "energy": 7.5,
+        "key": "F minor",
+        "frequency_range": "40-120 Hz"
+      },
+      "details": {
+        "description": "Deep, rhythmic bassline inspired by reggae and dub music.",
+        "cultural_significance": "Links jungle directly to its Jamaican soundsystem roots.",
+        "typical_usage": "Often slowed down or time-stretched to fit jungle's tempo",
+        "production_technique": "Often sampled from reggae records or recreated with round sub bass."
+      }
+    }
+  }
