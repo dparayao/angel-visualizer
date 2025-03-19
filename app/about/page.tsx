@@ -19,6 +19,9 @@ export default function About() {
             <p className="mb-4">
                 I made this project for my DH150 class! Our task was to create a project centered around audio. I was inspired by internet subgenre mixes on YouTube, and I wanted to make a cute music visualizer. The angel artwork is mine - it is drawn in Procreate and exported as an animated PNG. Their outfits are inspired by a Cyberdog (UK ravewear store) ad from the 90s. I used pixel shader brushes I found online to create a pixel art effect.
             </p>
+            <p className="mb-4">
+                Also disclaimer that I annotated the mix by hand and I am not a Jungle/DnB expert so some parts may be wrong!
+            </p>
           </section>
           
           <section className="mb-8">
