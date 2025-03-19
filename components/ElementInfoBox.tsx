@@ -18,7 +18,7 @@ const ELEMENT_DATA = {
       key: "C minor",
     },
     details: {
-      description: "The most sampled drum break in history, from the song 'Amen, Brother'. It exploded in popularity in the early 1990s UK jungle scene when producers would pitch it up to 150-170 BPM and manipulate it.\nRunning this audio through Python's Librosa, we get:\n[0.0, 0.560774724133331, 0.10609165208763613, 0.33868341512464034, 1.0, 0.036266776425020165, 0.09692755364371677, 0.5186703449784449, 0.12747916231391482, 0.062482527048594416, 0.08574585066183836, 0.4204578841718032, 0.6962578729712173, 0.1791695114627513, 0.0, 0.0]\nMeaning,it has strong beats at positions 4 (1.0), 12 (0.70), and 1 (0.56), creating that iconic uneven pattern. it has an asymmetric distribution of intensity with multiple peaks and valleys, creating that distinctive 'rolling' feel. The pattern shows strong hits followed by ghost notes, giving it that characteristic swing. "
+      description: "The most sampled drum break in history, from the song 'Amen, Brother'. It exploded in popularity in the early 1990s UK jungle scene when producers would pitch it up to 150-170 BPM and manipulate it.\nRunning this audio through Python's Librosa, we get:\n[0.0, 0.560774724133331, 0.10609165208763613, 0.33868341512464034, 1.0, 0.036266776425020165, 0.09692755364371677, 0.5186703449784449, 0.12747916231391482, 0.062482527048594416, 0.08574585066183836, 0.4204578841718032, 0.6962578729712173, 0.1791695114627513, 0.0, 0.0]\nMeaning,it has strong beats at positions 4 (1.0), 12 (0.70), and 1 (0.56), creating that iconic uneven pattern. it has an asymmetric distribution of intensity with multiple peaks and valleys, creating that distinctive 'rolling' feel. The pattern shows strong hits followed by ghost notes, giving it that characteristic swing.\nInternet subgenres have further manipulated breakcore by speeding it up to even higher BPMs and breaking it into small fragments to create a 'glitchy' sound."
     },
     filename: "amen_break.mp3"
   },
@@ -31,7 +31,7 @@ const ELEMENT_DATA = {
       key: "F minor",
     },
     details: {
-      description: "Deep, rumbling bass designed to be felt in car audio systems. \nRunning this sample through Python's MIDI, we can see that there is sparse 3-6 notes per slice, concentrated on pitches 4 (74.5%) and 9 (25.5%) \nThis shows the typical pattern of a modern DNB foghorn/car bass sound - sparse note density creating those characteristic 'stabs' rather than continuous notes, limited pitch range focusing on just two main notes, and an irregular rhythm pattern that creates that aggressive, honking quality."
+      description: "Deep, rumbling bass created from a foghorn. \nRunning this sample through Python's MIDI, we can see that there is sparse 3-6 notes per slice, concentrated on pitches 4 (74.5%) and 9 (25.5%) \nThis demonstrates a Jungle bass sound, with the limited pitch range of two main notes, and a DnB bass characteristic, an irregular rhythm pattern."
     },
     filename: "foghorn_car_bass.mp3"
   },
@@ -44,7 +44,7 @@ const ELEMENT_DATA = {
       key: "Various",
     },
     details: {
-      description: "Fast breakbeat patterns typical of modern drum and bass."
+      description: "An example of a 175 BPM drum break - typically used in DnB rather than Jungle."
     },
     filename: "175bpm_break.mp3"
   },
@@ -70,7 +70,7 @@ const ELEMENT_DATA = {
       key: "Various",
     },
     details: {
-      description: "Atmospheric elements that provide texture and context."
+      description: "Meant to evoke a melancholic emotion, these elements can either be created using music software or are modified samples from other songs, films, etc."
     },
     filename: "ambient_sample.mp3"
   },
@@ -83,7 +83,7 @@ const ELEMENT_DATA = {
       key: "N/A",
     },
     details: {
-      description: "Funky drum break produced by James Brown."
+      description: "A popular drum break from the 1972 song 'Think'."
     },
     filename: "think_break_174bpm.mp3"
   },
@@ -109,7 +109,7 @@ const ELEMENT_DATA = {
       key: "N/A",
     },
     details: {
-      description: "Classic breakbeat at 160 BPM, a staple in jungle production."
+      description: "An example of a 160 BPM breakbeat, a staple in jungle production."
     },
     filename: "160bpm_break.mp3"
   }

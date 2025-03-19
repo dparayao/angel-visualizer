@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import TimelineView from '../components/TimelineView';
-import ElementVisualizer from '../components/ElementVisualizer';
 import ElementInfoBox from '../components/ElementInfoBox';
+import NavBar from '../components/NavBar';
 import { loadEnhancedMixData } from '../lib/dataLoader';
 import { MixAnnotations, Pattern, YouTubePlayer, YouTubePlayerEvent } from '../lib/types';
 
@@ -19,7 +19,7 @@ export default function Home() {
   const [seekCheckIntervalId, setSeekCheckIntervalId] = useState<NodeJS.Timeout | null>(null);
   const lastUpdateTimeRef = useRef<number>(0);
 
-  // Load the mix annotations data
+  // load mix annotations data
   useEffect(() => {
     const loadData = async () => {
       const data = await loadEnhancedMixData();
@@ -29,7 +29,7 @@ export default function Home() {
     loadData();
   }, []);
 
-  // Define YouTube window interface
+  // define yt video interface
   interface YouTubeWindow {
     YT: {
       Player: new (
@@ -48,11 +48,9 @@ export default function Home() {
     onYouTubeIframeAPIReady?: () => void;
   }
 
-  // Define updateActiveElements first as a useCallback to avoid reference issues
   const updateActiveElements = useCallback((time: number) => {
     if (!mixData) return;
     
-    // Don't update too frequently
     const now = Date.now();
     if (now - lastUpdateTimeRef.current < 100) return;
     lastUpdateTimeRef.current = now;
@@ -63,16 +61,15 @@ export default function Home() {
     
     setActiveElements(active);
     
-    // Update jungle and dnb elements
+    // update jungle and dnb elements
     const junglePatterns = active.filter(el => el.type === 'jungle');
     const dnbPatterns = active.filter(el => el.type === 'dnb');
     
-    // Set the first element of each type, if available
+    // set the first element of each type, if available
     setJungleElement(junglePatterns.length > 0 ? junglePatterns[0] : null);
     setDnbElement(dnbPatterns.length > 0 ? dnbPatterns[0] : null);
   }, [mixData]);
 
-  // Convert startTimeTracking to useCallback
   const startTimeTracking = useCallback(() => {
     if (timerRef.current !== null) {
       window.clearInterval(timerRef.current);
@@ -84,10 +81,9 @@ export default function Home() {
         setCurrentTime(newTime);
         updateActiveElements(newTime);
       }
-    }, 100); // Update every 100ms for smooth tracking
-  }, [updateActiveElements]); // Removed player from dependencies
+    }, 100);
+  }, [updateActiveElements]); 
 
-  // Convert stopTimeTracking to useCallback
   const stopTimeTracking = useCallback(() => {
     if (timerRef.current !== null) {
       window.clearInterval(timerRef.current);
@@ -95,15 +91,14 @@ export default function Home() {
     }
   }, []);
 
-  // Add player to the dependency array of the initializePlayer useCallback
+
   const initializePlayer = useCallback((videoId: string) => {
     const onPlayerStateChange = (event: YouTubePlayerEvent) => {
-      // YT.PlayerState.PLAYING = 1
       if (event.data === 1) {
         setIsPlaying(true);
         startTimeTracking();
         
-        // Update elements immediately when playback starts
+        // update elements immediately when playback starts
         if (player && typeof player.getCurrentTime === 'function') {
           const newTime = player.getCurrentTime();
           setCurrentTime(newTime);
@@ -113,7 +108,7 @@ export default function Home() {
         setIsPlaying(false);
         stopTimeTracking();
         
-        // Also update elements when paused
+        // update elements when paused
         if (event.data === 2 && player && typeof player.getCurrentTime === 'function') {
           const newTime = player.getCurrentTime();
           setCurrentTime(newTime);
@@ -122,17 +117,15 @@ export default function Home() {
       }
     };
     
-    // Add this new function to detect seeking events
     const addSeekingEventListener = (playerInstance: YouTubePlayer) => {
       let lastTime = 0;
       
-      // Set up a checking interval to detect seeking
+      // checking interval to detect seeking
       const seekCheckInterval = setInterval(() => {
         if (playerInstance && typeof playerInstance.getCurrentTime === 'function') {
           const currentTime = playerInstance.getCurrentTime();
           
-          // Only update if time jumped by more than 1 second (seeking)
-          // AND we haven't updated recently
+          // only update if time jumped more than 1 sec + haven't checked recently
           const now = Date.now();
           if (Math.abs(currentTime - lastTime) > 1 && 
               now - lastUpdateTimeRef.current > 100) {
@@ -144,7 +137,7 @@ export default function Home() {
         }
       }, 200);
       
-      // Store the interval ID for cleanup
+      // store interval ID for cleanup
       return seekCheckInterval;
     };
     
@@ -154,13 +147,11 @@ export default function Home() {
       setSeekCheckIntervalId(intervalId);
     };
 
-    // We need to cast window to unknown first, then to YouTubeWindow
-    // to satisfy TypeScript's type checking
     const ytWindow = window as unknown as YouTubeWindow;
     
     const newPlayer = new ytWindow.YT.Player('youtube-player', {
-      height: '270', // Smaller video height
-      width: '480',  // Smaller video width
+      height: '270', 
+      width: '480', 
       videoId: videoId,
       events: {
         onReady: onPlayerReady,
@@ -169,14 +160,14 @@ export default function Home() {
     });
     
     setPlayer(newPlayer);
-  }, [setIsPlaying, updateActiveElements, setCurrentTime, startTimeTracking, stopTimeTracking]); // Removed player from dependencies
+  }, [setIsPlaying, updateActiveElements, setCurrentTime, startTimeTracking, stopTimeTracking]); 
 
-  // Initialize YouTube Player API
+  // initialize YouTube Player API
   useEffect(() => {
-    // Only proceed if we have mixData with a valid YouTube ID
+    // continue if mixData and valid YouTube ID
     if (!mixData || !mixData.youtubeVideoId) return;
     
-    // Create YouTube script element if it doesn't exist
+    // initialize yt script element
     if (!document.getElementById('youtube-api')) {
       const tag = document.createElement('script');
       tag.id = 'youtube-api';
@@ -184,19 +175,18 @@ export default function Home() {
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
 
-      // Define the onYouTubeIframeAPIReady function
-      // We need to cast window to unknown first, then to YouTubeWindow
+      // onYouTubeIframeAPIReady function
       const ytWindow = window as unknown as YouTubeWindow;
       ytWindow.onYouTubeIframeAPIReady = () => {
         initializePlayer(mixData.youtubeVideoId);
       };
     } else if ((window as unknown as YouTubeWindow).YT) {
-      // If the script already exists and YT is loaded, initialize player directly
+      // if script already exists and YT is loaded, initialize player directly
       initializePlayer(mixData.youtubeVideoId);
     }
   }, [mixData, initializePlayer]); // Added initializePlayer to dependency array
 
-  // Clean up on unmount
+  // clean up on unmount
   useEffect(() => {
     return () => {
       if (timerRef.current !== null) {
@@ -210,7 +200,6 @@ export default function Home() {
 
   const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
     console.log("Canvas clicked!");
-    // rest of the function
   };
   
   const handleTimelineClick = useCallback((time: number) => {
@@ -224,31 +213,15 @@ export default function Home() {
     }
   }, [player, updateActiveElements]);
 
-  // Function to get the current song name
-  const getCurrentSongName = (elements: Pattern[]): string => {
-    if (elements.length === 0) {
-      return "No song detected";
-    }
-    
-    // Check if timestamps has song info
-    if (elements[0].timestamps && 
-        elements[0].timestamps.length > 0 && 
-        elements[0].timestamps[0].song) {
-      return elements[0].timestamps[0].song;
-    }
-    
-    // Fall back to element name
-    return elements[0].name;
-  };
-
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
       <header className="p-4 bg-gray-900">
         <h1 className="text-4xl font-bold text-center" style={{ fontFamily: 'var(--font-nintendo-ds)' }}>Jungle/DnB Mix Visualizer</h1>
+        <NavBar />
       </header>
       
       <main className="flex flex-col flex-1 p-4">
-        {/* Top section with angel images - bigger and closer together */}
+        {/* Top section with angel images*/}
         <div className="flex justify-center gap-80 mb-6">
           <div className="h-80">
             <img src="/angel-left.png" alt="Angel" className="w-full h-full" />

@@ -1,10 +1,7 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',  // Enables static HTML export
-  basePath: process.env.NODE_ENV === 'production' ? '/dj-mix-visualization' : '',
-  images: {
-    unoptimized: true,  // For static export
-  },
+ /** @type {import('next').NextConfig} */
+ const nextConfig = {
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
+  basePath: process.env.NODE_ENV === 'production' ? '/angel-visualizer' : '',
+  images: { unoptimized: true },
 }
-
 module.exports = nextConfig
