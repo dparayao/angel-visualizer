@@ -28,7 +28,7 @@ export default function About() {
             <h3 className="text-2xl font-bold mb-4">Technologies Used</h3>
             <ul className="list-disc list-inside">
               <li>Next.js React framework</li>
-              <li>Website written in Typescript</li>
+              <li>Website written in Typescript and styled with Tailwind</li>
               <li>Music analysis performed using Python&apos;s Librosa and MIDI libraries</li>
               <li>YouTube Player API for audio playback</li>
               <li>Hosted on Vercel</li>
