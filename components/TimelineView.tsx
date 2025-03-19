@@ -21,21 +21,6 @@ const TimelineView = ({ mixData, currentTime, onTimeClick }: TimelineViewProps) 
   const getMaxTime = useCallback((): number => {
     return 32 * 60 + 24; // 32:24 = 1944 seconds
   }, []);
-
-  // Get the current pattern based on currentTime
-  const getCurrentPattern = (): string | null => {
-    if (!mixData || !mixData.patterns || currentTime <= 0) return null;
-    
-    for (const pattern of mixData.patterns) {
-      for (const ts of pattern.timestamps) {
-        if (currentTime >= ts.start && currentTime <= ts.end) {
-          return pattern.name;
-        }
-      }
-    }
-    
-    return null;
-  };
   
   // Get the currently playing song based on currentTime
   const getCurrentSong = (): string | null => {
@@ -186,7 +171,6 @@ const TimelineView = ({ mixData, currentTime, onTimeClick }: TimelineViewProps) 
     onTimeClick(clickedTime);
   };
 
-  const currentPattern = getCurrentPattern();
   const currentSong = getCurrentSong();
 
   return (
