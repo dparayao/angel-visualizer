@@ -1,7 +1,8 @@
- /** @type {import('next').NextConfig} */
- const nextConfig = {
-  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
-  basePath: process.env.NODE_ENV === 'production' ? '/angel-visualizer' : '',
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
   images: { unoptimized: true },
+  // Comment out the basePath temporarily
+  // basePath: process.env.NODE_ENV === 'production' ? '/angel-visualizer' : '',
 }
 module.exports = nextConfig
