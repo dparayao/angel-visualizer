@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import NavBar from '../../components/NavBar';
 
 export default function Analysis() {
@@ -18,7 +17,7 @@ export default function Analysis() {
           <section className="mb-8">
             <h3 className="text-2xl font-bold mb-4">Introduction</h3>
             <p className="mb-4">
-            "Heavenly Breakcore," "Atmospheric Jungle," and "Dreamcast" - these are the names of digital subcultures’ evolving soundtracks. I originally sought to research their evolution, but deeper research revealed these aren't fully evolved genres yet, but microgenres heavily reliant on Jungle/Drum and Bass (DnB) elements.
+            "Heavenly Breakcore," "Atmospheric Jungle," and "Dreamcast" - these are the names of digital subcultures&apos; evolving soundtracks. I originally sought to research their evolution, but deeper research revealed these aren&apos;t fully evolved genres yet, but microgenres heavily reliant on Jungle/Drum and Bass (DnB) elements.
             </p>
             <p className="mb-4">
             This led me to create an artistic visualization tool to help others new to internet music subgenres understand how modern internet mixes repurpose classic Jungle/DnB elements. Fundamentally, social media facilitated the rise of internet subcultures and their cultivated music, with bedroom DJs inheriting the DIY spirit of UK underground rave culture.
@@ -64,7 +63,7 @@ export default function Analysis() {
             Running this audio through Python's Librosa, we get an array representing the normalized amplitude or intensity values of the drum hits across 16 evenly-spaced time positions:
             [0.0, 0.560774724133331, 0.10609165208763613, 0.33868341512464034, 1.0, 0.036266776425020165, 0.09692755364371677, 0.5186703449784449, 0.12747916231391482, 0.062482527048594416, 0.08574585066183836, 0.4204578841718032, 0.6962578729712173, 0.1791695114627513, 0.0, 0.0]            </p>
             <p className="mb-4">
-            The sample has strong beats at 4 (1.0), 12 (0.70), and 1 (0.56), creating an irregular pattern. The result follows Butler’s analysis of the Amen Break, in that there is a subtle hi-hat which is the only instrument an even rhythm, a snare drum hitting strong dynamic accents on beats 2 and 4, the same snare drum hitting weak sixteenth-note beats and a bass drum emphasizing the first beat. (Butler, 78)            </p>
+            The sample has strong beats at 4 (1.0), 12 (0.70), and 1 (0.56), creating an irregular pattern. The result follows Butler&apos;s analysis of the Amen Break, in that there is a subtle hi-hat which is the only instrument an even rhythm, a snare drum hitting strong dynamic accents on beats 2 and 4, the same snare drum hitting weak sixteenth-note beats and a bass drum emphasizing the first beat. (Butler, 78)            </p>
             <p className="mb-4">
             As mentioned earlier, free tutorials teach global audiences how to produce internet subgenre music like “90s Playstation Jungle”. The creator, christhescientist, goes over how to transform different Jungle/DnB elements to fit the subgenre’s sound, such as adjusting note velocities, using an Amen break “as a drum fill at the end of the bar”, and modifying samples by adding “an EQ to make room for the bass”. Christhescientist also discusses creating “9th chords”, an element from jazz, to produce emotional and nostalgic samples. Early Jungle/DnB producers also evoked melancholy with unconventional samples such as movie scenes, sirens, and even the 1985 NASA launch. (Resident Advisor)            </p>
             <p className="mb-4">
@@ -97,7 +96,7 @@ export default function Analysis() {
     <ul className="list-disc pl-6 space-y-2">
       <li>Resident Advisor. (2024, March 7). What makes something jungle? [Video]. YouTube. <a href="https://www.youtube.com/watch?v=vDZHEAwDAVo" className="text-blue-400 hover:text-blue-300 underline">https://www.youtube.com/watch?v=vDZHEAwDAVo</a></li>
       <li>Christhescientist. (2023, April 27). How to make Playstation Jungle from the 2000s [Video]. YouTube. <a href="https://www.youtube.com/watch?v=bwW245q5668" className="text-blue-400 hover:text-blue-300 underline">https://www.youtube.com/watch?v=bwW245q5668</a></li>
-      <li>DXMTHL. (2022, September 24). A beginner's guide to breakcore, drum & bass, jungle & breakbeat hardcore [Video]. YouTube. <a href="https://www.youtube.com/watch?v=n04zbWo5obA" className="text-blue-400 hover:text-blue-300 underline">https://www.youtube.com/watch?v=n04zbWo5obA</a></li>
+      <li>DXMTHL. (2022, September 24). A beginner&apos;s guide to breakcore, drum & bass, jungle & breakbeat hardcore [Video]. YouTube. <a href="https://www.youtube.com/watch?v=n04zbWo5obA" className="text-blue-400 hover:text-blue-300 underline">https://www.youtube.com/watch?v=n04zbWo5obA</a></li>
     </ul>
   </div>
   

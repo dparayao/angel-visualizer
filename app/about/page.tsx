@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import Link from 'next/link';
 import NavBar from '../../components/NavBar';
 
 export default function About() {
@@ -27,7 +26,7 @@ export default function About() {
             <ul className="list-disc list-inside">
               <li>Next.js React framework</li>
               <li>Website written in Typescript</li>
-              <li>Music analysis performed using Python's Librosa and MIDI libraries</li>
+              <li>Music analysis performed using Python&apos;s Librosa and MIDI libraries</li>
               <li>YouTube Player API for audio playback</li>
               <li>Hosted on Vercel</li>
             </ul>

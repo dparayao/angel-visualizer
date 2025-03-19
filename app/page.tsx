@@ -12,7 +12,6 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [mixData, setMixData] = useState<MixAnnotations | null>(null);
-  const [activeElements, setActiveElements] = useState<Pattern[]>([]);
   const [jungleElement, setJungleElement] = useState<Pattern | null>(null);
   const [dnbElement, setDnbElement] = useState<Pattern | null>(null);
   const timerRef = useRef<number | null>(null);
@@ -58,8 +57,6 @@ export default function Home() {
     const active = mixData.patterns.filter(pattern => 
       pattern.timestamps.some(ts => time >= ts.start && time <= ts.end)
     );
-    
-    setActiveElements(active);
     
     // update jungle and dnb elements
     const junglePatterns = active.filter(el => el.type === 'jungle');
@@ -198,10 +195,6 @@ export default function Home() {
     };
   }, [seekCheckIntervalId]);
 
-  const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    console.log("Canvas clicked!");
-  };
-  
   const handleTimelineClick = useCallback((time: number) => {
     console.log("Timeline click handler called with time:", time);
     if (player && typeof player.seekTo === 'function') {

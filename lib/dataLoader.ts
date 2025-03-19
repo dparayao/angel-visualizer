@@ -57,12 +57,20 @@ export const loadEnhancedMixData = async (): Promise<MixAnnotations> => {
     // Enhance each pattern with its full analysis data if available
     const enhancedPatterns = mixData.patterns.map((pattern: Pattern) => {
       const analysisKey = pattern.name.toLowerCase().replace(/\s+/g, '_');
-      const analysis = analysisData[analysisKey] || {};
+      const analysis = analysisData[analysisKey];
+      
+      if (!analysis) {
+        return pattern;
+      }
       
       return {
         ...pattern,
-        fingerprint: pattern.fingerprint || analysis.fingerprint || {},
-        details: analysis.details || {}
+        fingerprint: pattern.fingerprint || {},
+        // Copy visualization properties directly
+        rhythm_pattern: analysis.rhythm_pattern,
+        pitch_histogram: analysis.pitch_histogram,
+        note_density_over_time: analysis.note_density_over_time,
+        most_common_pitches: analysis.most_common_pitches
       };
     });
     

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Pattern } from '../lib/types';
 
 interface ElementVisualizerProps {
-  element: any; // Using any to accommodate the JSON structure you provided
+  element: Pattern | null;
   isPlaying: boolean;
 }
 
@@ -37,11 +37,10 @@ const ElementVisualizer: React.FC<ElementVisualizerProps> = ({ element, isPlayin
     // Support both 'dnb' and 'bass' as type names
     const isJungle = elementType === 'break';
     const isDnb = elementType === 'bass' || elementType === 'dnb';
-    const isAmbient = elementType === 'ambient';
 
     // Set base color based on element type
-    const baseColor = isJungle ? 'rgb(255, 165, 0)' : // Orange for jungle/breaks
-                     isDnb ? 'rgb(128, 0, 128)' :     // Purple for dnb/bass
+    const baseColor = isJungle ? 'rgb(168, 202, 242)' : // Orange for jungle/breaks
+                     isDnb ? 'rgb(168, 202, 242)' :     // Purple for dnb/bass
                      'rgb(0, 128, 128)';              // Teal for ambient
 
     // Try to find visualization data - access directly from element
@@ -121,7 +120,7 @@ const ElementVisualizer: React.FC<ElementVisualizerProps> = ({ element, isPlayin
       const numBars = 8;
       const barWidth = (width - 20) / numBars;
       
-      ctx.fillStyle = 'rgba(255, 165, 0, 0.7)';
+      ctx.fillStyle = 'rgb(168, 202, 242)';
       
       for (let i = 0; i < numBars; i++) {
         const barHeight = Math.abs(Math.sin((time + i * 0.3) % Math.PI)) * (height - 20);
@@ -134,13 +133,13 @@ const ElementVisualizer: React.FC<ElementVisualizerProps> = ({ element, isPlayin
       }
     } else if (type === 'dnb' || type === 'bass') {
       // Enhanced purple wave for dnb/bass elements
-      ctx.strokeStyle = 'rgba(128, 0, 128, 0.7)';
+      ctx.strokeStyle = 'rgb(168, 202, 242)';
       ctx.lineWidth = 3;
       
       // Create a gradient for the line
       const gradient = ctx.createLinearGradient(0, 0, 0, height);
-      gradient.addColorStop(0, 'rgba(128, 0, 128, 0.9)');
-      gradient.addColorStop(1, 'rgba(128, 0, 128, 0.3)');
+      gradient.addColorStop(0, 'rgb(168, 202, 242)');
+      gradient.addColorStop(1, 'rgba(56, 54, 109, 0.19)');
       
       // First draw a filled area
       ctx.beginPath();
@@ -165,7 +164,7 @@ const ElementVisualizer: React.FC<ElementVisualizerProps> = ({ element, isPlayin
         ctx.lineTo(x, y);
       }
       
-      ctx.strokeStyle = 'rgba(180, 0, 180, 0.8)';
+      ctx.strokeStyle = 'rgba(139, 183, 229, 0.8)';
       ctx.lineWidth = 2;
       ctx.stroke();
       
@@ -178,7 +177,7 @@ const ElementVisualizer: React.FC<ElementVisualizerProps> = ({ element, isPlayin
         
         if (wavePos > 0.7) { // Only add circles near peaks
           ctx.beginPath();
-          ctx.fillStyle = 'rgba(180, 0, 180, 0.6)';
+          ctx.fillStyle = 'rgba(190, 230, 255, 0.6)';
           ctx.arc(x, y, 5 + Math.sin(time * 5) * 3, 0, Math.PI * 2);
           ctx.fill();
         }
